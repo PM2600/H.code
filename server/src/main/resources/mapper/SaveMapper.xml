@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zy.mapper.SaveMapper">
+
+
+    <insert id="SaveNO1">
+        INSERT INTO root.EM.NO1(id, Date, ST, SM, CDC, LI, AT, AH, PM25)
+        VALUES("#{id}", "#{Date}", "#{ST}", "#{SM}", "#{CDC}", "#{LI}", "#{AT}", "#{AH}", "#{PM25}")
+
+    </insert>
+
+    <insert id="SaveNO2">
+        INSERT INTO root.EM.NO2(id, Date, SF, ECOS)
+        VALUES("#{id}", "#{Date}", "#{SF}", "#{ECOS}")
+    </insert>
+
+</mapper>

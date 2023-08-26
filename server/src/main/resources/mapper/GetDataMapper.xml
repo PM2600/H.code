@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zy.mapper.GetDataMapper">
+
+
+    <resultMap id="NO1DataMap" type="com.zy.model.NO1Data">
+        <id column="root.EM.NO1.id" property="id"/>
+        <result column="root.EM.NO1.Date" property="Date"/>
+        <result column="root.EM.NO1.ST" property="ST"/>
+        <result column="root.EM.NO1.SM" property="SM"/>
+        <result column="root.EM.NO1.CDC" property="CDC"/>
+        <result column="root.EM.NO1.LI" property="LI"/>
+        <result column="root.EM.NO1.AT" property="AT"/>
+        <result column="root.EM.NO1.AH" property="AH"/>
+        <result column="root.EM.NO1.PM25" property="PM25"/>
+    </resultMap>
+
+    <resultMap id="NO2DataMap" type="com.zy.model.NO2Data">
+        <id column="root.EM.NO2.id" property="id"/>
+        <result column="root.EM.NO2.Date" property="Date"/>
+        <result column="root.EM.NO2.SF" property="SF"/>
+        <result column="root.EM.NO2.ECOS" property="ECOS"/>
+    </resultMap>
+
+    <select id="GetNO1" resultMap="NO1DataMap">
+        SELECT * FROM root.EM.NO1 WHERE Time > 1 AND id=#{DeviceID} ORDER BY Time DESC limit #{limit} offset 0
+    </select>
+
+    <select id="GetNO2" resultMap="NO2DataMap">
+        SELECT * FROM root.EM.NO2 WHERE time > 1 AND id=#{DeviceID} ORDER BY time DESC limit #{limit}
+    </select>
+</mapper>
