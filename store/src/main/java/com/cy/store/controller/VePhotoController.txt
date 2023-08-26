@@ -1,0 +1,35 @@
+package com.cy.store.controller;
+
+import com.cy.store.entity.VePhoto;
+import com.cy.store.service.IVePhotoService;
+import com.cy.store.util.JsonResult;
+import com.cy.store.vo.VeVO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("vephoto")
+public class VePhotoController extends BaseController {
+
+    @Autowired
+    private IVePhotoService vePhotoService;
+
+//    //溯源农产品
+//    @GetMapping("showvedetails")
+//    public JsonResult<VeVO> showVeById(Integer id) {
+//        // 调用业务对象执行获取数据
+//        VeVO data = vePhotoService.showVeById(id);
+//        // 返回成功和数据
+//        return new JsonResult<VeVO>(OK, data);
+//    }
+//    @GetMapping("{id}/showvedetails")
+//    public JsonResult<VeVO> showVeById(@PathVariable("id") Integer id) {
+//        // 调用业务对象执行获取数据
+//        VeVO data = vePhotoService.showVeById(id);
+//        // 返回成功和数据
+//        return new JsonResult<VeVO>(OK, data);
+//    }
+}
